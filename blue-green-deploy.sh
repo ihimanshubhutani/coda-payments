@@ -21,5 +21,5 @@ kubectl apply -f ${SERVICE_FILE}
 ​
 if [ ${REMOVE_PREVIOUS_DEPLOYMENT} ]; then
 	echo "INFO :: Removing previous deployment"
-	kubectl delete deployment "${DEPLOYMENT_NAME}"
+	kubectl delete deployment "${DEPLOYMENT_NAME}-${BLUE_VERSION}"
 fi
