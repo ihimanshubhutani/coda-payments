@@ -8,7 +8,7 @@ spec:
   selector:
     component: nodejs
     app: coda-test-task
-    version: 3263f7
+    version: VERSION_TO_REPLACE
   ports:
   - name: codatesttask
     protocol: TCP
