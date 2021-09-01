@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-deployment-3263f7
+  name: nodejs-deployment-VERSION_TO_REPLACE
   labels:
     component: nodejs
     app: coda-test-task
-    version: 3263f7
+    version: VERSION_TO_REPLACE
 spec:
   replicas: 1
   selector:
     matchLabels:
       component: nodejs
       app: coda-test-task
-      version: 3263f7
+      version: VERSION_TO_REPLACE
   template:
     metadata:
       labels:
         component: nodejs
         app: coda-test-task
-        version: 3263f7
+        version: VERSION_TO_REPLACE
     spec:
       containers:
       - name: coda-test-app
-        image: 210195853677.dkr.ecr.us-east-1.amazonaws.com/coda-test-task:3263f7
+        image: 210195853677.dkr.ecr.us-east-1.amazonaws.com/coda-test-task:VERSION_TO_REPLACE
         ports:
         - containerPort: 3000
         resources:
