@@ -1,25 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs-deployment
+  name: nodejs-deployment-3263f7
   labels:
+    component: nodejs
     app: coda-test-task
+    version: 3263f7
 spec:
   replicas: 1
   selector:
     matchLabels:
-     app: coda-test-task
+      component: nodejs
+      app: coda-test-task
+      version: 3263f7
   template:
     metadata:
       labels:
-        app: nodejs
+        component: nodejs
+        app: coda-test-task
+        version: 3263f7
     spec:
       containers:
       - name: coda-test-app
-        image: zarakmughal/nodejs-starter:1.0
+        image: 210195853677.dkr.ecr.us-east-1.amazonaws.com/coda-test-task:3263f7
         ports:
         - containerPort: 3000
         resources:
-           limits:
-             memory: 100Mi
-             cpu: 200m
+          requests:
+            memory: 100Mi
+            cpu: 100m
+          limits:
+            memory: 200Mi
+            cpu: 200m

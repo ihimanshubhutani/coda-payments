@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: coda-test-task
+  labels:
+    app: coda-test-task
+spec:
+  selector:
+    component: nodejs
+    app: coda-test-task
+    version: 3263f7
+  ports:
+  - name: codatesttask
+    protocol: TCP
+    port: 3000
+    targetPort: 3000

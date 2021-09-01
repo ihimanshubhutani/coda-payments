@@ -55,4 +55,4 @@ jobs:
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          command: kubectl get po
+          command: sh blue-green-deploy.sh
