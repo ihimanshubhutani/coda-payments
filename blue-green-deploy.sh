@@ -1,4 +1,6 @@
 #!/bin/bash
+# Script deploying app using blue green strategy 
+
 DEPLOYMENT_FILE="k8s/deployment.yaml"
 DEPLOYMENT_NAME="nodejs-deployment"
 GREEN_VERSION="$(git rev-parse --short HEAD)"
