@@ -2,8 +2,8 @@
 ​
 DEPLOYMENT_FILE="k8s/deployment.yaml"
 DEPLOYMENT_NAME="nodejs-deployment"
-BLUE_VERSION="3263f722"
-GREEN_VERSION="3263f7"
+BLUE_VERSION="$(git rev-parse --short HEAD~1)"
+GREEN_VERSION="$(git rev-parse --short HEAD)"
 DEPLOYMENT_REF="deploy/nodejs-deployment"
 REMOVE_PREVIOUS_DEPLOYMENT=true
 SERVICE_FILE="k8s/service.yaml"
