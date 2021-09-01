@@ -25,7 +25,7 @@ kubectl rollout status "${DEPLOYMENT_REF}-${GREEN_VERSION}"
 ​
 kubectl apply -f ${SERVICE_FILE}
 ​
-if [ ${REMOVE_PREVIOUS_DEPLOYMENT} ]; then
+if [ ${BLUE_DEPLOYEMENT} ]; then
 	echo "INFO :: Removing previous deployment"
 	kubectl delete deployment "${BLUE_DEPLOYEMENT}"
 fi
