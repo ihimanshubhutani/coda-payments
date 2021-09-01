@@ -2,7 +2,7 @@
 ​
 DEPLOYMENT_FILE="k8s/deployment.yaml"
 DEPLOYMENT_NAME="nodejs-deployment"
-BLUE_VERSION="$(git rev-parse --short HEAD~1)"
+BLUE_DEPLOYEMNET="$(kubectl get deploy -l app=coda-test-task -o jsonpath="{.items[0].metadata.name}")"
 GREEN_VERSION="$(git rev-parse --short HEAD)"
 DEPLOYMENT_REF="deploy/nodejs-deployment"
 REMOVE_PREVIOUS_DEPLOYMENT=true
@@ -21,5 +21,5 @@ kubectl apply -f ${SERVICE_FILE}
 ​
 if [ ${REMOVE_PREVIOUS_DEPLOYMENT} ]; then
 	echo "INFO :: Removing previous deployment"
-	kubectl delete deployment "${DEPLOYMENT_NAME}-${BLUE_VERSION}"
+	kubectl delete deployment "${BLUE_DEPLOYEMENT}"
 fi
