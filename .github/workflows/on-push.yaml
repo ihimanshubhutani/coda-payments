@@ -54,5 +54,4 @@ jobs:
         uses: koslib/helm-eks-action@master
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          command: sh blue-green-deploy.sh
+      - run: sh blue-green-deploy.sh
