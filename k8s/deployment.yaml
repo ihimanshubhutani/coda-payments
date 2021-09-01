@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+  labels:
+    app: coda-test-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: coda-test-task
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: coda-test-app
+        image: zarakmughal/nodejs-starter:1.0
+        ports:
+        - containerPort: 3000
+        resources:
+           limits:
+             memory: 100Mi
+             cpu: 200m
